@@ -1,0 +1,448 @@
+{
+  "form_info": {
+    "title": "Comprehensive Python & Linux Fundamentals Test",
+    "description": "Complete assessment covering Python syntax, data structures, functions, file handling, Linux shell scripting, and Git fundamentals. This test includes 30 questions across all major topics. Please answer all questions to demonstrate your understanding."
+  },
+  "is_quiz": true,
+  "questions": [
+    {
+      "type": "TEXT",
+      "title": "Full Name",
+      "description": "Please enter your complete name",
+      "required": true,
+      "points": 0
+    },
+    {
+      "type": "TEXT",
+      "title": "Email Address",
+      "description": "Please enter your email address",
+      "required": true,
+      "points": 0
+    },
+    {
+      "type": "RADIO",
+      "title": "Which of the following is a valid Python variable name?",
+      "options": ["2variable", "my-variable", "_private_var", "class"],
+      "correct_answers": ["_private_var"],
+      "required": true,
+      "shuffle": true,
+      "description": "Python Syntax & Variables",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! Variable names can start with underscore and contain letters, digits, underscores.",
+        "incorrect": "Variable names cannot start with digits, contain hyphens, or be reserved keywords."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What is the result of: bool([])",
+      "options": ["True", "False", "None", "Error"],
+      "correct_answers": ["False"],
+      "required": true,
+      "shuffle": true,
+      "description": "Python Data Types",
+      "points": 2,
+      "feedback": {
+        "correct": "Perfect! Empty containers evaluate to False in boolean context.",
+        "incorrect": "Empty lists, like other empty containers, are falsy in Python."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What does this expression evaluate to: 10 // 3",
+      "options": ["3.33", "3", "4", "1"],
+      "correct_answers": ["3"],
+      "required": true,
+      "shuffle": true,
+      "description": "Basic Operations",
+      "points": 2,
+      "feedback": {
+        "correct": "Excellent! The // operator performs floor division.",
+        "incorrect": "The // operator performs floor division, returning the largest integer less than or equal to the result."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What will this code print?",
+      "options": ["0 1 2", "0 2", "1 2", "0 1"],
+      "correct_answers": ["0 2"],
+      "required": true,
+      "shuffle": true,
+      "description": "Control Structures - Loops. Code: for i in range(3): if i == 1: continue; print(i)",
+      "points": 3,
+      "feedback": {
+        "correct": "Great! The continue statement skips the rest of the loop iteration when i equals 1.",
+        "incorrect": "The continue statement skips printing when i equals 1, so only 0 and 2 are printed."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What is the output of this conditional?",
+      "options": ["positive", "negative", "5", "Error"],
+      "correct_answers": ["positive"],
+      "required": true,
+      "shuffle": true,
+      "description": "Control Structures - Conditionals. Code: x = 5; result = 'positive' if x > 0 else 'negative'; print(result)",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! This is a ternary operator - since 5 > 0 is True, it returns 'positive'.",
+        "incorrect": "The ternary operator checks if x > 0. Since 5 > 0 is True, it returns 'positive'."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What does this list comprehension create?",
+      "options": ["[0, 1, 4, 9, 16]", "[0, 4, 16]", "[1, 9]", "[0, 2, 4]"],
+      "correct_answers": ["[0, 4, 16]"],
+      "required": true,
+      "shuffle": true,
+      "description": "List Comprehensions. Code: [x**2 for x in range(5) if x % 2 == 0]",
+      "points": 3,
+      "feedback": {
+        "correct": "Perfect! It squares only even numbers: 0²=0, 2²=4, 4²=16.",
+        "incorrect": "The comprehension squares numbers from range(5) but only includes even numbers (0, 2, 4)."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What type of comprehension creates this: {x: x*2 for x in range(3)}",
+      "options": ["List comprehension", "Set comprehension", "Dictionary comprehension", "Generator expression"],
+      "correct_answers": ["Dictionary comprehension"],
+      "required": true,
+      "shuffle": true,
+      "description": "Dictionary Comprehensions",
+      "points": 2,
+      "feedback": {
+        "correct": "Excellent! The curly braces with key:value pairs indicate a dictionary comprehension.",
+        "incorrect": "The curly braces with key:value syntax (x: x*2) creates a dictionary comprehension."
+      }
+    },
+    {
+      "type": "CHECKBOX",
+      "title": "Which of these are mutable data structures in Python?",
+      "options": ["list", "tuple", "set", "dictionary", "string", "frozenset"],
+      "correct_answers": ["list", "set", "dictionary"],
+      "required": true,
+      "shuffle": true,
+      "description": "Core Data Structures - Mutability",
+      "points": 3,
+      "feedback": {
+        "correct": "Great! Lists, sets, and dictionaries can be modified after creation.",
+        "incorrect": "Remember: lists, sets, and dicts are mutable. Tuples, strings, and frozensets are immutable."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What's the difference between a list and a tuple in Python?",
+      "options": [
+        "Lists are faster than tuples",
+        "Tuples are mutable, lists are immutable", 
+        "Lists are mutable, tuples are immutable",
+        "No difference"
+      ],
+      "correct_answers": ["Lists are mutable, tuples are immutable"],
+      "required": true,
+      "shuffle": true,
+      "description": "Core Data Structures - List vs Tuple",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! This is the key difference - lists can be changed, tuples cannot.",
+        "incorrect": "Lists are mutable (changeable) while tuples are immutable (unchangeable)."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "How do you remove duplicates from a list while preserving order?",
+      "options": [
+        "list(set(my_list))",
+        "list(dict.fromkeys(my_list))",
+        "my_list.unique()",
+        "remove_duplicates(my_list)"
+      ],
+      "correct_answers": ["list(dict.fromkeys(my_list))"],
+      "required": true,
+      "shuffle": true,
+      "description": "Core Data Structures - Real-world Usage",
+      "points": 3,
+      "feedback": {
+        "correct": "Perfect! dict.fromkeys() preserves insertion order while removing duplicates.",
+        "incorrect": "set() removes duplicates but doesn't preserve order. dict.fromkeys() preserves order."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What is the output of this function call?",
+      "options": ["Hello, Alice!", "Alice, Hello!", "Error", "Hello!"],
+      "correct_answers": ["Hello, Alice!"],
+      "required": true,
+      "shuffle": true,
+      "description": "Functions with Parameters. Code: def greet(name, message='Hello'): return f'{message}, {name}!'; print(greet('Alice'))",
+      "points": 2,
+      "feedback": {
+        "correct": "Excellent! The default parameter 'Hello' is used when message is not provided.",
+        "incorrect": "When message isn't provided, the default value 'Hello' is used."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What happens to variables inside a function by default?",
+      "options": [
+        "They are global variables",
+        "They have local scope",
+        "They are automatically deleted",
+        "They become class variables"
+      ],
+      "correct_answers": ["They have local scope"],
+      "required": true,
+      "shuffle": true,
+      "description": "Function Scope",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! Variables defined inside functions have local scope by default.",
+        "incorrect": "Function variables have local scope - they only exist within the function."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What is the base case in recursion?",
+      "options": [
+        "The first function call",
+        "The condition that stops recursive calls",
+        "The return statement",
+        "The recursive call itself"
+      ],
+      "correct_answers": ["The condition that stops recursive calls"],
+      "required": true,
+      "shuffle": true,
+      "description": "Recursion",
+      "points": 3,
+      "feedback": {
+        "correct": "Perfect! The base case prevents infinite recursion by providing a stopping condition.",
+        "incorrect": "The base case is the condition that stops the recursive calls to prevent infinite recursion."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "Which Python module is best for reading CSV files?",
+      "options": ["json", "csv", "xml", "os"],
+      "correct_answers": ["csv"],
+      "required": true,
+      "shuffle": true,
+      "description": "File Handling - CSV",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! The csv module provides tools for reading and writing CSV files.",
+        "incorrect": "The csv module is specifically designed for handling CSV (Comma Separated Values) files."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "How do you parse JSON data from a string in Python?",
+      "options": ["json.load()", "json.loads()", "json.read()", "json.parse()"],
+      "correct_answers": ["json.loads()"],
+      "required": true,
+      "shuffle": true,
+      "description": "File Handling - JSON",
+      "points": 2,
+      "feedback": {
+        "correct": "Perfect! json.loads() parses JSON from a string (load string).",
+        "incorrect": "json.loads() is for parsing JSON strings. json.load() is for files."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "Which method opens a file for both reading and writing?",
+      "options": ["open('file.txt', 'r')", "open('file.txt', 'w')", "open('file.txt', 'r+')", "open('file.txt', 'a')"],
+      "correct_answers": ["open('file.txt', 'r+')"],
+      "required": true,
+      "shuffle": true,
+      "description": "File Handling - Text Files",
+      "points": 2,
+      "feedback": {
+        "correct": "Excellent! The 'r+' mode opens for both reading and writing.",
+        "incorrect": "'r+' mode allows both reading and writing. 'r' is read-only, 'w' is write-only."
+      }
+    },
+    {
+      "type": "PARAGRAPH_TEXT",
+      "title": "Write a Python function that reads a JSON file and returns the data as a dictionary. Include error handling.",
+      "description": "File Handling - Practical Application",
+      "required": true,
+      "points": 5,
+      "feedback": {
+        "general": "Should include: function definition, file opening, json.load(), error handling with try/except, and return statement."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What does the Linux command 'chmod 755 script.sh' do?",
+      "options": [
+        "Changes owner to 755",
+        "Sets read/write/execute for owner, read/execute for group and others",
+        "Creates 755 copies of the file",
+        "Sets the file size to 755 bytes"
+      ],
+      "correct_answers": ["Sets read/write/execute for owner, read/execute for group and others"],
+      "required": true,
+      "shuffle": true,
+      "description": "Linux Shell Scripting - Permissions",
+      "points": 3,
+      "feedback": {
+        "correct": "Perfect! 755 means rwxr-xr-x (owner: rwx, group: r-x, others: r-x).",
+        "incorrect": "755 in octal means: owner gets read/write/execute (7), group and others get read/execute (5)."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "Which command searches for a pattern in files?",
+      "options": ["find", "grep", "locate", "search"],
+      "correct_answers": ["grep"],
+      "required": true,
+      "shuffle": true,
+      "description": "Linux Shell Scripting - grep",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! grep searches for patterns within file contents.",
+        "incorrect": "grep is used to search for text patterns within files. find locates files, not content."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What does the 'awk' command primarily do?",
+      "options": [
+        "Compresses files",
+        "Processes and analyzes text files",
+        "Creates directories", 
+        "Manages processes"
+      ],
+      "correct_answers": ["Processes and analyzes text files"],
+      "required": true,
+      "shuffle": true,
+      "description": "Linux Shell Scripting - awk",
+      "points": 2,
+      "feedback": {
+        "correct": "Excellent! awk is a powerful text processing tool for pattern scanning and data extraction.",
+        "incorrect": "awk is a text processing language used for pattern scanning and data extraction from files."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "Which 'sed' command replaces all occurrences of 'old' with 'new' in a file?",
+      "options": [
+        "sed 's/old/new/' file.txt",
+        "sed 's/old/new/g' file.txt",
+        "sed 'r/old/new/' file.txt",
+        "sed 'old/new' file.txt"
+      ],
+      "correct_answers": ["sed 's/old/new/g' file.txt"],
+      "required": true,
+      "shuffle": true,
+      "description": "Linux Shell Scripting - sed",
+      "points": 3,
+      "feedback": {
+        "correct": "Perfect! The 'g' flag makes sed replace all occurrences, not just the first one.",
+        "incorrect": "The 'g' (global) flag is needed to replace all occurrences. Without it, only the first match per line is replaced."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What is the first step to start tracking a new Git repository?",
+      "options": ["git add .", "git commit", "git init", "git push"],
+      "correct_answers": ["git init"],
+      "required": true,
+      "shuffle": true,
+      "description": "Git Basics - Repository Initialization",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! git init initializes a new Git repository in the current directory.",
+        "incorrect": "git init must be run first to initialize a Git repository before other Git commands work."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What does 'git add .' do?",
+      "options": [
+        "Adds a single file",
+        "Adds all modified and new files to staging area",
+        "Commits all changes",
+        "Creates a new branch"
+      ],
+      "correct_answers": ["Adds all modified and new files to staging area"],
+      "required": true,
+      "shuffle": true,
+      "description": "Git Basics - Staging",
+      "points": 2,
+      "feedback": {
+        "correct": "Perfect! The dot (.) represents all files in the current directory and subdirectories.",
+        "incorrect": "git add . stages all modified and new files for the next commit."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "How do you create a new branch called 'feature' in Git?",
+      "options": [
+        "git new feature",
+        "git branch feature", 
+        "git create feature",
+        "git checkout feature"
+      ],
+      "correct_answers": ["git branch feature"],
+      "required": true,
+      "shuffle": true,
+      "description": "Git Basics - Branching",
+      "points": 2,
+      "feedback": {
+        "correct": "Excellent! git branch <name> creates a new branch with the given name.",
+        "incorrect": "git branch <name> creates a new branch. git checkout switches between branches."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What command merges changes from 'feature' branch into the current branch?",
+      "options": [
+        "git merge feature",
+        "git join feature", 
+        "git combine feature",
+        "git add feature"
+      ],
+      "correct_answers": ["git merge feature"],
+      "required": true,
+      "shuffle": true,
+      "description": "Git Basics - Merging",
+      "points": 2,
+      "feedback": {
+        "correct": "Correct! git merge combines changes from the specified branch into the current branch.",
+        "incorrect": "git merge <branch> integrates changes from the specified branch into your current branch."
+      }
+    },
+    {
+      "type": "RADIO",
+      "title": "What is the difference between 'git push' and 'git pull'?",
+      "options": [
+        "No difference",
+        "push sends changes to remote, pull fetches changes from remote",
+        "pull sends changes to remote, push fetches changes from remote", 
+        "Both do the same thing"
+      ],
+      "correct_answers": ["push sends changes to remote, pull fetches changes from remote"],
+      "required": true,
+      "shuffle": true,
+      "description": "Git Basics - Push/Pull",
+      "points": 2,
+      "feedback": {
+        "correct": "Perfect! push uploads your changes, pull downloads changes from the remote repository.",
+        "incorrect": "push uploads your local changes to remote repository, pull downloads remote changes to local."
+      }
+    },
+    {
+      "type": "PARAGRAPH_TEXT",
+      "title": "Explain the complete Git workflow from making changes to pushing them to a remote repository. Include all necessary commands.",
+      "description": "Git Basics - Complete Workflow",
+      "required": true,
+      "points": 5,
+      "feedback": {
+        "general": "Should include: making changes, git add, git commit with message, git push. Bonus points for mentioning git status and git pull."
+      }
+    }
+  ]
+}
